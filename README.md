@@ -60,7 +60,7 @@ What is it doing? Well it's using method (2) above, and then using something cal
 
 ### Types
 
-Before we delve any further we should really talk about types, and the important operator "typeof".Objects that we talked about above will have types. For the most part, the built in objects will have more interesting types like "string" or "number", and the ones we create will be a little more boring like "object". Let's talk about types in terms of examples:
+Before we delve any further we should really talk about types, and the important operator `typeof`.Objects that we talked about above will have types. For the most part, the built in objects will have more interesting types like `string` or `number`, and the ones we create will be a little more boring like `object`. Let's talk about types in terms of examples:
 
     typeof "hello" // = string
     typeof Infinity // = number, Infinity is a built-in number.
