@@ -39,7 +39,7 @@ You have to do:
 
     var person = new Person(); // Makes an object
 
-The 'new' keyword in Javascript indicates that you calling this function as a function or you actually want to make a new object.
+The `new` keyword in Javascript indicates that you calling this function as a function or you actually want to make a new object.
 
 **Note**: The Javascript overloards thought that method (2) was too confusing so they introduced a new method in ECMAScript5 that replaces method (b). This though is more of a shortcut, you can do it yourself. It's called: `Object.create()`. Here is a glimpse into what it looks like:
 
@@ -73,7 +73,7 @@ Before we delve any further we should really talk about types, and the important
     typeof SomethingIDidntDefine // = undefined
     typeof Object.create // = function
 
-First 3 are objects, but the result of their type is pretty predictable. Why is an array(4th) an object? The dirty secret is that an array is well also a map/object. So if you take `["a", "b", "c"]`, it's being stored as `{ "1": "a", "2": "b", "3": "c" }`. Arrays have a lot of other operations that make them valuable, which we'll talk about later.
+First 3 are objects, but the result of their type is pretty predictable. Why is an array an object type? The dirty secret is that an array is well also a map/object. So if you take `["a", "b", "c"]`, it's being stored as `{ "1": "a", "2": "b", "3": "c" }`. Arrays have a lot of other operations that make them valuable, which we'll talk about later.
 
 Another interesting thing is doing a typeof on something that is not defined, this is the only operator that will not give you an error trying to access something that you have never seen before. This is commonly a good way to check if the variable has been defined. 
 
@@ -94,7 +94,7 @@ The world of Javascript is fraught with confusion over equality. I'm not talking
 
 A lot of the coersions here can be explained, but the lesson is that the double equals is not predictable and hard to read and is best to not use in practice, unless you are coding with a bunch of JS ninjas and trying to save a few bytes from your file. 
 
-**Note**: The real reason for why you see the above wierd behavior is that JS will convert certain things to true or false, when forced to. The following are *falsy* in JS, or in otherwords get converted to false during type coersion:
+**Note #1**: The real reason for why you see the above wierd behavior is that JS will convert certain things to true or false, when forced to. The following are *falsy* in JS, or in otherwords get converted to false during type coersion:
 
     false
     null
@@ -104,3 +104,11 @@ A lot of the coersions here can be explained, but the lesson is that the double 
     NaN
 
 Everything else is *truthy*. 
+
+**Note #2**: Intentional conversions can be very useful. For numbers the unary `+` works the best(and fastest). So you can do things like:
+
+    +"5" // -> 5 string to a number
+    +new Date() // -> Current unix time in millis
+    !!(NaN) // -> false - converts a value to a bool
+    5+"" // -> "5" number to string
+    
